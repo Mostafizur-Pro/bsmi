@@ -1,23 +1,18 @@
-import './index.css'
-import { RouterProvider } from 'react-router-dom'
-import ReactDOM from 'react-dom/client'
-import React from 'react'
-import { Toaster } from '@/components/ui/toaster'
+import "./index.css";
+import ReactDOM from "react-dom/client";
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { AuthProvider } from "./components/context/AuthContext";
+import App from "./App";
 
-import router from './components/routes/Routes/Routes'
+const queryClient = new QueryClient();
 
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { AuthProvider } from './components/context/AuthContext'
-
-const queryClient = new QueryClient()
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <RouterProvider router={router} />
-        <Toaster />
+        <App />
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
-)
+);

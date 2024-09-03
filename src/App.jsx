@@ -1,11 +1,14 @@
 import "./App.css";
-import { Button } from "./components/ui/button";
+import { RouterProvider } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster";
+import router from "./components/routes/Routes/Routes";
 
 function App() {
   return (
-    <>
-      <Button variant="destructive">Hello Shadcn</Button>
-    </>
+    <div className="container min-h-[calc(100vh-64px)]">
+      <RouterProvider router={router} />
+      <Toaster />
+    </div>
   );
 }
 
