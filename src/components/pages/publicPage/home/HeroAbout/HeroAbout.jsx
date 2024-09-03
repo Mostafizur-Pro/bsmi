@@ -39,7 +39,7 @@ const HeroAbout = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-3xl font-bold mb-4"
             >
-              About Fight School
+              About <span className="text-red-700">Fight</span> School
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

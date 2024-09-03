@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -6,7 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { motion } from "framer-motion";
 
 const heroImages = [
   {
@@ -39,37 +39,38 @@ const HeroSection = () => {
           {heroImages.map((image, index) => (
             <CarouselItem key={index}>
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 100 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="p-1"
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.1 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="relative"
               >
-                <Card className="shadow-lg">
-                  <CardContent
-                    className="flex items-center justify-center p-6 bg-cover bg-center bg-no-repeat h-[500px] md:h-[600px]"
-                    style={{
-                      backgroundImage: `url(${image.src})`,
-                    }}
+                <motion.img
+                  src={image.src}
+                  alt={image.caption}
+                  className="object-cover w-full h-[500px] md:h-[600px] transition-transform duration-700 ease-in-out"
+                  style={{ transformOrigin: "center" }}
+                  initial={{ scale: 1 }}
+                  animate={{ scale: 1.05 }}
+                  exit={{ scale: 1 }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="bg-black bg-opacity-60 text-white p-6 rounded-lg"
                   >
-                    <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-                      className="bg-black bg-opacity-50 text-white p-4 rounded-lg"
-                    >
-                      <h2 className="text-2xl md:text-4xl font-bold">
-                        {image.caption}
-                      </h2>
-                    </motion.div>
-                  </CardContent>
-                </Card>
+                    <h2 className="text-3xl md:text-5xl font-bold text-red-700">{image.caption}</h2>
+                  </motion.div>
+                </div>
               </motion.div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full shadow-md hover:bg-gray-800 transition-all" />
-        <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full shadow-md hover:bg-gray-800 transition-all" />
+        <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all" />
+        <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all" />
       </Carousel>
     </div>
   );

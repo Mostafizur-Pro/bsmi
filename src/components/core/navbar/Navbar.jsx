@@ -124,15 +124,15 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300"
+      className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30"
     >
       <div className="b_profile_container">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="w-[100px] md:w-[165px] xl:w-[186px] font-bold text-lg text-red-700 transition-all duration-300"
+            className="w-[100px] md:w-[15px] xl:w-[186px] font-bold text-4xl text-red-700 transition-all duration-300"
           >
             BSMI
           </motion.div>
