@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 
 const contactInfo = [
   {
-    title: "Contact Us 24/7",
-    detail: "+1-202-555-0140",
+    title: "Contact Us ",
+    detail: `+880-123-456-7890 bsmi@gmail.com`,
+    
   },
   {
     title: "Address",
-    detail: "Season Street 45/2\nLos Angeles, Inc - 4502",
+    detail: "Rua Desembargador Motta, 3231 - Curitiba - Paraná - Brazil - 80.430-232",
   },
   {
     title: "Working Hours",

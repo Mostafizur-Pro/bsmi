@@ -124,7 +124,7 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30"
+      className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30 rounded-b-2xl"
     >
       <div className="b_profile_container">
         <div className="flex items-center justify-between px-4">

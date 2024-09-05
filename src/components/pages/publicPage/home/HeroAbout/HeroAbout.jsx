@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 const HeroAbout = () => {
   return (
     <section className="relative py-16 text-white">
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <img
           src="https://media.istockphoto.com/id/936261220/photo/karate-students-training-together.jpg?s=1024x1024&w=is&k=20&c=H7XtVohsYZG51UNrKP8_tP1W2L_4dfGgfzGvH4bYlFc="
           alt="Martial Arts Training"
           className="object-cover w-full h-full opacity-40"
         />
-      </div>
+      </div> */}
       <div className="relative container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <motion.div
@@ -39,28 +39,24 @@ const HeroAbout = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-3xl font-bold mb-4"
             >
-              About <span className="text-red-700">Fight</span> School
+              BANGLADESH SPORT MARTIAL ARTS INSTITUTE (BSMI)
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="text-lg mb-4"
-            >
-              Fight School has specialized in martial arts since 1986 and has
-              one of the most innovative programs in the nation.
-            </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
               className="text-lg mb-4"
             >
-              We teach martial arts because we love it — not because we want to
-              make money on you. Unlike other martial arts schools, we do not
-              require you to sign long term contracts. You just pay one low
-              monthly fee for your martial arts and self-defense classes at the
-              beginning of each month.
+              It is the world governing body for Traditional Karate. The ITKF
+              intends, by popularizing and developing Traditional Karate in the
+              proper direction and by promoting and strengthening friendly
+              relations among its member organizations and their members in all
+              countries, to achieve the advancement of world sports and Budo
+              spirit and thereby contribute to the perfection of human
+              character. The Mission of the ITKF is to protect the original
+              Traditional Karate based on the foundation of Budo. Its goal is to
+              maintain the concept of human development through Traditional
+              Karate training.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -70,6 +66,17 @@ const HeroAbout = () => {
             >
               <strong>Aiden Richards</strong> - Director / Instructor
             </motion.p>
+
+            {/* Animated About Us Button */}
+            <motion.a
+              href="#about"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block mt-6 px-6 py-3 text-lg font-bold bg-red-700 hover:bg-red-600 text-white rounded-lg shadow-md"
+              transition={{ duration: 0.3 }}
+            >
+              ABOUT US
+            </motion.a>
           </motion.div>
         </div>
       </div>

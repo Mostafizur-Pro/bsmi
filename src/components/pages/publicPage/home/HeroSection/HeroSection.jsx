@@ -1,12 +1,5 @@
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const heroImages = [
   {
@@ -32,27 +25,46 @@ const heroImages = [
 ];
 
 const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // 5 seconds interval
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNext = () => {
+    setDirection(1); // Moving forward
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const handlePrevious = () => {
+    setDirection(-1); // Moving backward
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
   return (
     <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
-      <Carousel className="relative w-full">
-        <CarouselContent>
-          {heroImages.map((image, index) => (
-            <CarouselItem key={index}>
+      <div className="relative w-full h-[500px] md:h-[600px]">
+        <AnimatePresence initial={false} custom={direction}>
+          {heroImages.map((image, index) =>
+            index === currentSlide ? (
               <motion.div
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="relative"
+                key={index}
+                className="absolute w-full h-full"
+                custom={direction}
+                initial={{ x: direction > 0 ? "100%" : "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: direction > 0 ? "-100%" : "100%" }}
+                transition={{ duration: 1 }}
               >
-                <motion.img
+                <img
                   src={image.src}
                   alt={image.caption}
-                  className="object-cover w-full h-[500px] md:h-[600px] transition-transform duration-700 ease-in-out"
-                  style={{ transformOrigin: "center" }}
-                  initial={{ scale: 1 }}
-                  animate={{ scale: 1.05 }}
-                  exit={{ scale: 1 }}
+                  className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
@@ -66,12 +78,24 @@ const HeroSection = () => {
                   </motion.div>
                 </div>
               </motion.div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all" />
-        <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all" />
-      </Carousel>
+            ) : null
+          )}
+        </AnimatePresence>
+
+        {/* Controls */}
+        <button
+          onClick={handlePrevious}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all"
+        >
+          &#10094;
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all"
+        >
+          &#10095;
+        </button>
+      </div>
     </div>
   );
 };
