@@ -39,7 +39,7 @@ const NavbarHamburgerMenu = () => {
             className="flex flex-col space-y-3 mt-10"
           >
             {menu.map((item, index) => item.items ? (
-              <div key={index} className="rounded-lg text-white">
+              <div key={index} className="rounded-lg ">
                 <Dropdown
                   className="text-white w-full rounded-lg"
                   inline
@@ -52,7 +52,7 @@ const NavbarHamburgerMenu = () => {
                   {item.items.map((subItem, subIndex) => (
                     <Dropdown.Item key={subIndex}>
                       <Link
-                        className="w-11/12 mx-auto my-1 rounded-md text-left hover:bg-gray-100 transition-colors duration-300"
+                        className="w-10/12 mx-auto my-1 rounded-md text-left hover:bg-gray-100 transition-colors duration-300"
                         to={subItem.path}
                       >
                         {subItem.label}
@@ -80,6 +80,14 @@ const NavbarHamburgerMenu = () => {
 // Navigation Menu Configuration
 const menu = [
   { label: 'Home', path: '/' },
+  {
+    label: 'About',
+    items: [
+      { label: 'Institutional', path: '/institutional' },
+      { label: 'Traditional', path: '/traditional' },
+      { label: 'The President', path: '/president' }
+    ]
+  },
   {
     label: 'Events & Results',
     items: [
@@ -109,19 +117,12 @@ const menu = [
     label: 'Media',
     items: [
       { label: 'Videos', path: '/videos' },
-      { label: 'Photos', path: '/photos' }
+      { label: 'Gallery', path: '/gallery' }
     ]
   },
-  { label: 'News', path: '/news' },
+  // { label: 'News', path: '/news' },
   { label: 'Contact', path: '/contact' },
-  {
-    label: 'About',
-    items: [
-      { label: 'Institutional', path: '/institutional' },
-      { label: 'Traditional', path: '/traditional' },
-      { label: 'The President', path: '/president' }
-    ]
-  }
+  
 ];
 
 // Main Navbar Component
@@ -184,7 +185,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center">
-            <div className="mr-4">
+            {/* <div className="mr-4">
               {users ? (
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -202,7 +203,7 @@ const Navbar = () => {
                   Login
                 </Link>
               )}
-            </div>
+            </div> */}
             <div className="lg:hidden block">
               <NavbarHamburgerMenu />
             </div>

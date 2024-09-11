@@ -1,7 +1,8 @@
 import MainLayout from '@/components/layouts/MainLayout'
 import LoginPage from '@/components/pages/auth/user/login/Login'
+import ContactPage from '@/components/pages/publicPage/contact/ContactPage'
 import Home from '@/components/pages/publicPage/home/Home'
-import SingleProduct from '@/components/pages/publicPage/singleProduct/singleProduct'
+// import SingleProduct from '@/components/pages/publicPage/singleProduct/singleProduct'
 
 const PublicRoutes = [
   {
@@ -17,11 +18,23 @@ const PublicRoutes = [
         element: <LoginPage />,
       },
       {
-        path: '/product/:id',
-        element: <SingleProduct />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/api/v1/products/${params.id}`),
+        path: '/videos',
+        element: <ContactPage />,
       },
+      {
+        path: '/gallery',
+        element: <ContactPage />,
+      },
+      {
+        path: '/contact',
+        element: <ContactPage />,
+      },
+      // {
+      //   path: '/product/:id',
+      //   element: <SingleProduct />,
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:3000/api/v1/products/${params.id}`),
+      // },
 
      
     ],
