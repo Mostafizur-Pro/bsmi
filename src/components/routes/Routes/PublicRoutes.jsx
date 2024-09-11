@@ -1,6 +1,7 @@
 import MainLayout from '@/components/layouts/MainLayout'
 import LoginPage from '@/components/pages/auth/user/login/Login'
 import ContactPage from '@/components/pages/publicPage/contact/ContactPage'
+import DocumentationPage from '@/components/pages/publicPage/documents/DocumentationPage'
 import Home from '@/components/pages/publicPage/home/Home'
 import GalleryPage from '@/components/pages/publicPage/Media/GalleryPage'
 import VideosPage from '@/components/pages/publicPage/Media/VideosPage'
@@ -18,6 +19,10 @@ const PublicRoutes = [
       {
         path: '/login',
         element: <LoginPage />,
+      },
+      {
+        path: '/programs',
+        element: <DocumentationPage />,
       },
       {
         path: '/videos',
