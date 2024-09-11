@@ -5,6 +5,7 @@ import DocumentationPage from '@/components/pages/publicPage/documents/Documenta
 import Home from '@/components/pages/publicPage/home/Home'
 import GalleryPage from '@/components/pages/publicPage/Media/GalleryPage'
 import VideosPage from '@/components/pages/publicPage/Media/VideosPage'
+import Organizations from '@/components/pages/publicPage/members/Organizations'
 // import SingleProduct from '@/components/pages/publicPage/singleProduct/singleProduct'
 
 const PublicRoutes = [
@@ -19,6 +20,10 @@ const PublicRoutes = [
       {
         path: '/login',
         element: <LoginPage />,
+      },
+      {
+        path: '/member_organizations',
+        element: <Organizations />,
       },
       {
         path: '/programs',
