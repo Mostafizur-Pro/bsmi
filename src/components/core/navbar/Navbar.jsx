@@ -83,7 +83,7 @@ const menu = [
   {
     label: 'About',
     items: [
-      { label: 'Institutional', path: '/institutional' },
+      { label: 'Institutional', path: '/about-us' },
       { label: 'Traditional', path: '/traditional' },
       { label: 'The President', path: '/president' }
     ]

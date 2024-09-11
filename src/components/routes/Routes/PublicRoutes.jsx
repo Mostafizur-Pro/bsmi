@@ -1,5 +1,6 @@
 import MainLayout from '@/components/layouts/MainLayout'
 import LoginPage from '@/components/pages/auth/user/login/Login'
+import AboutUsPage from '@/components/pages/publicPage/about/International'
 import ContactPage from '@/components/pages/publicPage/contact/ContactPage'
 import DocumentationPage from '@/components/pages/publicPage/documents/DocumentationPage'
 import Home from '@/components/pages/publicPage/home/Home'
@@ -16,6 +17,10 @@ const PublicRoutes = [
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/about-us',
+        element: <AboutUsPage />,
       },
       {
         path: '/login',
