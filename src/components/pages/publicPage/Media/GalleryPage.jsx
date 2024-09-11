@@ -1,39 +1,79 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const GalleryPage = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const images = [
-    "/images/image1.jpg",
-    "/images/image2.jpg",
-    "/images/image3.jpg",
-    "/images/image4.jpg",
-    "/images/image5.jpg",
-    "/images/image6.jpg",
+    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?auto=format&fit=crop&w=700&q=80",
   ];
 
   return (
-    <section className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center mb-10">
-        <h1 className="text-4xl font-extrabold text-gray-900">Our Gallery</h1>
-        <p className="mt-4 text-gray-600">
-          Explore our collection of beautiful images from our recent projects.
+        <h1 className="text-4xl font-semibold ">
+          Our Beautiful Gallery
+        </h1>
+        <p className="mt-4 ">
+          A collection of peaceful and stunning visuals, curated just for you.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {images.map((src, index) => (
-          <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg">
-            <img
+          <motion.div
+            key={index}
+            className="relative group overflow-hidden rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05, rotate: 1 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            <motion.img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
+              className="w-full h-64 object-cover rounded-lg"
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.4 }}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-              <Button className="text-white bg-indigo-600 hover:bg-indigo-700">
+            <motion.div
+              className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Button
+                className="text-white bg-purple-600 hover:bg-purple-700 rounded-full px-4 py-2"
+                onClick={() => setSelectedImage(src)}
+              >
                 View Image
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
+
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.img
+            src={selectedImage}
+            className="max-w-3xl max-h-screen object-contain"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.div>
+      )}
     </section>
   );
 };
