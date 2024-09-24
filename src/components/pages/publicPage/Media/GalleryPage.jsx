@@ -1,17 +1,25 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import ContactPage from "../contact/ContactPage";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?auto=format&fit=crop&w=700&q=80",
+    "https://itkf.global/wp-content/uploads/2022/11/316409619_586201280173854_8111533884636537768_n.jpg",
+    "https://itkf.global/wp-content/uploads/2020/06/DSC_6037-scaled.jpg",
+    "https://itkf.global/wp-content/uploads/2022/11/316408771_584781270315855_51997059554489535_n.jpg",
+    "https://itkf.global/wp-content/uploads/2020/06/DSC_6035-scaled.jpg",
+    "https://itkf.global/wp-content/uploads/2022/11/316323470_584781083649207_2613323817544306435_n.jpg",
+    "https://itkf.global/wp-content/uploads/2022/11/316406820_584781160315866_1119411055911158680_n.jpg",
+    "https://itkf.global/wp-content/uploads/2020/06/DSC_6049-scaled.jpg",
+    "https://itkf.global/wp-content/uploads/2020/06/DSC_6031-scaled.jpg",
+    "https://itkf.global/wp-content/uploads/2020/06/DSC_6031-scaled.jpg",
+    "https://itkf.global/wp-content/uploads/2022/11/316280032_583855163741799_969362008448922681_n.jpg",
+    "https://itkf.global/wp-content/uploads/2022/11/316274999_584781096982539_2409614666472097286_n.jpg",
+
+    "https://itkf.global/wp-content/uploads/2022/11/316174820_583854903741825_8692695542683444379_n.jpg",
   ];
 
   return (
@@ -74,6 +82,7 @@ const GalleryPage = () => {
           />
         </motion.div>
       )}
+      <ContactPage />
     </section>
   );
 };

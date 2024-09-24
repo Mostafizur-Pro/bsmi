@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import ContactPage from '../contact/ContactPage'
 
 const VideosPage = () => {
   const videos = [
@@ -72,6 +73,7 @@ const VideosPage = () => {
           </motion.div>
         ))}
       </div>
+      <ContactPage/>
     </section>
   )
 }

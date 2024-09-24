@@ -1,3 +1,4 @@
+import GalleryPage from "../Media/GalleryPage";
 import HeroAbout from "./HeroAbout/HeroAbout";
 import HeroContact from "./HeroContact/HeroContact";
 import HeroContactPage from "./HeroContact/HeroContactPage";
@@ -11,6 +12,8 @@ const Home = () => {
       {/* <HeroContact /> */}
       <HeroAbout />
       <HeroEvents />
+      <GalleryPage />
+
       <HeroContactPage />
 
     </div>
