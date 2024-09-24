@@ -31,7 +31,7 @@ const NavbarHamburgerMenu = () => {
         </SheetTrigger>
         <SheetContent
           className="overflow-y-auto px-5 md:px-10 transition-transform duration-500 ease-in-out"
-          side="right"
+          side="right" z
         >
           <motion.div
             initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ const NavbarHamburgerMenu = () => {
               item.items ? (
                 <div key={index} className="rounded-lg ">
                   <Dropdown
-                    className="text-white w-full rounded-lg"
+                    className=" w-full rounded-lg"
                     inline
                     label={
                       <div className="flex items-center ">
@@ -129,14 +129,14 @@ const menu = [
 
 // Main Navbar Component
 const Navbar = () => {
-  const { users } = useAuth()
+
 
   return (
     <motion.nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30 rounded-b-2xl"
+      className="py-2 sticky top-0  z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30 rounded-b-2xl"
     >
       <div className="b_profile_container">
         <div className="flex items-center justify-between px-4">

@@ -7,15 +7,18 @@ import slider3 from '@/assets/home/slider/slider3.jpg'
 const heroImages = [
   {
     src: slider1,
-    caption: "Master the Art of Karate",
+    caption: "Bangladesh Sport Martial Arts Institute",
+    caption1: "It is the world governing body for Traditional Karate",
   },
   {
     src: slider2,
-    caption: "Strength Through Discipline",
+    caption: "Bangladesh Sport Martial Arts Institute",
+    caption1: "It is the world governing body for Traditional Karate",
   },
   {
     src: slider3,
-    caption: "Focus and Precision",
+    caption: "Bangladesh Sport Martial Arts Institute",
+    caption1: "It is the world governing body for Traditional Karate",
   },
   // {
   //   src: "https://media.istockphoto.com/id/686610728/photo/little-children-martial-arts-fighters.jpg?s=1024x1024&w=is&k=20&c=XWRMK4ncSDipiJZKOAk-xmIZdqUq33rFoPG82MZxsCA=",
@@ -78,6 +81,7 @@ const HeroSection = () => {
                     className="bg-black bg-opacity-60 text-white p-6 rounded-lg"
                   >
                     <h2 className="text-3xl md:text-5xl font-bold text-red-700">{image.caption}</h2>
+                    <p className="text-xl md:text-2xl font-bold text-red-700">{image.caption}</p>
                   </motion.div>
                 </div>
               </motion.div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import LogoImage from '@/assets/logo/logo.png'
 
 const HeroAbout = () => {
   return (
@@ -19,7 +20,7 @@ const HeroAbout = () => {
             className="w-full md:w-1/2"
           >
             <motion.img
-              src="https://media.istockphoto.com/id/472047287/photo/aikido-throwing-technique.jpg?s=1024x1024&w=is&k=20&c=-F1Oda1n9Zl_y5sxYFx3iRKrMZPLLJ4DkVKl7aRjCEw="
+              src={LogoImage}
               alt="Martial Arts"
               className="rounded-lg shadow-lg"
               initial={{ scale: 0.95 }}
