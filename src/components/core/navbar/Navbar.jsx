@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Dropdown } from 'flowbite-react'
 import { useAuth } from '@/components/context/AuthContext'
+import LogoImage from '@/assets/logo/logo.png'
 
 // Mobile Sidebar Menu
 const NavbarHamburgerMenu = () => {
@@ -139,14 +140,18 @@ const Navbar = () => {
     >
       <div className="b_profile_container">
         <div className="flex items-center justify-between px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="w-[100px] md:w-[150px] xl:w-[186px] font-bold text-4xl text-red-700 transition-all duration-300"
-          >
-            BSMI
-          </motion.div>
+          <div className='flex items-center justify-center'>
+            <img src={LogoImage} className="h-16" alt="Business Profile logo" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="w-[100px] md:w-[150px] xl:w-[186px] font-bold text-4xl text-red-700 transition-all duration-300"
+            >
+
+              BSMI
+            </motion.div>
+          </div>
 
           <div className="hidden lg:flex items-center space-x-4">
             {menu.map((item, index) =>

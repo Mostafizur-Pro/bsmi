@@ -10,4 +10,14 @@ https://itkf.global/#
 
 new
 
+
+events are
+karate
+taekwando
+judo
+jujitsu
+kyokoshin
+kick boxing
+
+
  -->

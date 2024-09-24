@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import slider1 from '@/assets/home/slider/slider1.jpg'
+import slider2 from '@/assets/home/slider/slider2.jpg'
+import slider3 from '@/assets/home/slider/slider3.jpg'
 
 const heroImages = [
   {
-    src: "https://media.istockphoto.com/id/472047287/photo/aikido-throwing-technique.jpg?s=1024x1024&w=is&k=20&c=-F1Oda1n9Zl_y5sxYFx3iRKrMZPLLJ4DkVKl7aRjCEw=",
+    src: slider1,
     caption: "Master the Art of Karate",
   },
   {
-    src: "https://media.istockphoto.com/id/473565488/photo/fight-between-two-aikido-fighters.jpg?s=1024x1024&w=is&k=20&c=nebzCOPUusTOCm-jvxC9-3xvKWca26PwXcg3pMl_ZVE=",
+    src: slider2,
     caption: "Strength Through Discipline",
   },
   {
-    src: "https://media.istockphoto.com/id/472552816/photo/two-aikido-fighters.jpg?s=1024x1024&w=is&k=20&c=DRDyOthom0_WXm--wihVytRiYTCpFNsqc0qo4UCLKsg=",
+    src: slider3,
     caption: "Focus and Precision",
   },
-  {
-    src: "https://media.istockphoto.com/id/686610728/photo/little-children-martial-arts-fighters.jpg?s=1024x1024&w=is&k=20&c=XWRMK4ncSDipiJZKOAk-xmIZdqUq33rFoPG82MZxsCA=",
-    caption: "Achieve Inner Balance",
-  },
-  {
-    src: "https://media.istockphoto.com/id/613013690/photo/children-martial-arts-fighters.jpg?s=1024x1024&w=is&k=20&c=Ht4zDZxslzSzupcdve5klnSZGjbS0dXSnT4cvVXEk5M=",
-    caption: "Empower Your Spirit",
-  },
+  // {
+  //   src: "https://media.istockphoto.com/id/686610728/photo/little-children-martial-arts-fighters.jpg?s=1024x1024&w=is&k=20&c=XWRMK4ncSDipiJZKOAk-xmIZdqUq33rFoPG82MZxsCA=",
+  //   caption: "Achieve Inner Balance",
+  // },
+  // {
+  //   src: "https://media.istockphoto.com/id/613013690/photo/children-martial-arts-fighters.jpg?s=1024x1024&w=is&k=20&c=Ht4zDZxslzSzupcdve5klnSZGjbS0dXSnT4cvVXEk5M=",
+  //   caption: "Empower Your Spirit",
+  // },
 ];
 
 const HeroSection = () => {
