@@ -1,20 +1,43 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 const VideosPage = () => {
   const videos = [
-    { id: 1, title: "Karate Training - Basics", url: "https://www.youtube.com/embed/QvA7ehHKp0w" },
-    { id: 2, title: "Karate Masterclass", url: "https://www.youtube.com/embed/gRqeVem9h0c" },
-    { id: 3, title: "Advanced Karate Techniques", url: "https://www.youtube.com/embed/sUlyTOWpV-w" },
-    { id: 4, title: "Martial Arts Training", url: "https://www.youtube.com/embed/W-rFtpEDiJ8" },
-    { id: 5, title: "Karate Competition Highlights", url: "https://www.youtube.com/embed/O7YKl43ppW4" },
-  ];
+    {
+      id: 1,
+      title: 'Karate Training - Basics',
+      url: 'https://www.youtube.com/embed/QvA7ehHKp0w',
+    },
+    {
+      id: 2,
+      title: 'Karate Masterclass',
+      url: 'https://www.youtube.com/embed/gRqeVem9h0c',
+    },
+    {
+      id: 3,
+      title: 'Advanced Karate Techniques',
+      url: 'https://www.youtube.com/embed/sUlyTOWpV-w',
+    },
+    {
+      id: 4,
+      title: 'Martial Arts Training',
+      url: 'https://www.youtube.com/embed/W-rFtpEDiJ8',
+    },
+    {
+      id: 5,
+      title: 'Karate Competition Highlights',
+      url: 'https://www.youtube.com/embed/O7YKl43ppW4',
+    },
+  ]
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center mb-10">
-        <h1 className="text-4xl font-semibold text-gray-800">Karate & Martial Arts Videos</h1>
-        <p className="mt-4 text-gray-500">
-          Watch the best training sessions and competitions from the world of Karate.
+        <h1 className="text-4xl font-semibold ">
+          Karate & Martial Arts Videos
+        </h1>
+        <p className="mt-4 ">
+          Watch the best training sessions and competitions from the world of
+          Karate.
         </p>
       </div>
 
@@ -42,13 +65,15 @@ const VideosPage = () => {
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
             >
-              <span className="text-white text-lg font-bold">{video.title}</span>
+              <span className="text-white text-lg font-bold">
+                {video.title}
+              </span>
             </motion.div>
           </motion.div>
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default VideosPage;
+export default VideosPage
