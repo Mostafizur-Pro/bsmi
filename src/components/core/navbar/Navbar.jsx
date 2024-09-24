@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { NavLink, Link } from "react-router-dom";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Dropdown } from "flowbite-react";
-import { useAuth } from "@/components/context/AuthContext";
+import { motion } from 'framer-motion'
+import { NavLink, Link } from 'react-router-dom'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Dropdown } from 'flowbite-react'
+import { useAuth } from '@/components/context/AuthContext'
 
 // Mobile Sidebar Menu
 const NavbarHamburgerMenu = () => {
@@ -38,44 +38,46 @@ const NavbarHamburgerMenu = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex flex-col space-y-3 mt-10"
           >
-            {menu.map((item, index) => item.items ? (
-              <div key={index} className="rounded-lg ">
-                <Dropdown
-                  className="text-white w-full rounded-lg"
-                  inline
-                  label={
-                    <div className="flex items-center ">
-                      <h2 className="font-semibold">{item.label}</h2>
-                    </div>
-                  }
+            {menu.map((item, index) =>
+              item.items ? (
+                <div key={index} className="rounded-lg ">
+                  <Dropdown
+                    className="text-white w-full rounded-lg"
+                    inline
+                    label={
+                      <div className="flex items-center ">
+                        <h2 className="font-semibold">{item.label}</h2>
+                      </div>
+                    }
+                  >
+                    {item.items.map((subItem, subIndex) => (
+                      <Dropdown.Item key={subIndex}>
+                        <Link
+                          className="w-10/12 mx-auto my-1 rounded-md text-left hover:bg-gray-100 transition-colors duration-300"
+                          to={subItem.path}
+                        >
+                          {subItem.label}
+                        </Link>
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown>
+                </div>
+              ) : (
+                <NavLink
+                  key={index}
+                  className="font-semibold w-fit hover:border-b-4 border-b-slate-500 transition-colors duration-300"
+                  to={item.path}
                 >
-                  {item.items.map((subItem, subIndex) => (
-                    <Dropdown.Item key={subIndex}>
-                      <Link
-                        className="w-10/12 mx-auto my-1 rounded-md text-left hover:bg-gray-100 transition-colors duration-300"
-                        to={subItem.path}
-                      >
-                        {subItem.label}
-                      </Link>
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown>
-              </div>
-            ) : (
-              <NavLink
-                key={index}
-                className="font-semibold w-fit hover:border-b-4 border-b-slate-500 transition-colors duration-300"
-                to={item.path}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </motion.div>
         </SheetContent>
       </Sheet>
     </div>
-  );
-};
+  )
+}
 
 // Navigation Menu Configuration
 const menu = [
@@ -85,15 +87,15 @@ const menu = [
     items: [
       { label: 'Institutional', path: '/about-us' },
       { label: 'Traditional', path: '/traditional' },
-      { label: 'The President', path: '/president' }
-    ]
+      { label: 'The President', path: '/president' },
+    ],
   },
   {
     label: 'Events & Results',
     items: [
       { label: 'Events', path: '/events' },
-      { label: 'Results', path: '/result' }
-    ]
+      { label: 'Results', path: '/result' },
+    ],
   },
   {
     label: 'Initiatives',
@@ -101,39 +103,38 @@ const menu = [
       { label: 'Warriors', path: '/warriors' },
       { label: 'Hara Woman', path: '/hara_woman' },
       { label: 'Okinawan Karate & Kobudo', path: '/okinawan_karate' },
-      { label: 'Socio-Educational Projects', path: '/socio_educational' }
-    ]
+      { label: 'Socio-Educational Projects', path: '/socio_educational' },
+    ],
   },
   {
     label: 'Members',
     items: [
       { label: 'Member Organizations', path: '/member_organizations' },
       { label: 'Member Services', path: '/member_services' },
-      { label: 'Dan Registrations', path: '/dan_registrations' }
-    ]
+      { label: 'Dan Registrations', path: '/dan_registrations' },
+    ],
   },
   { label: 'Documents', path: '/programs' },
   {
     label: 'Media',
     items: [
       { label: 'Videos', path: '/videos' },
-      { label: 'Gallery', path: '/gallery' }
-    ]
+      { label: 'Gallery', path: '/gallery' },
+    ],
   },
   // { label: 'News', path: '/news' },
   { label: 'Contact', path: '/contact' },
-  
-];
+]
 
 // Main Navbar Component
 const Navbar = () => {
-  const { users } = useAuth();
+  const { users } = useAuth()
 
   return (
     <motion.nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
       className="py-2 sticky top-0 text-white z-50 shadow-md transition-shadow duration-300 backdrop-blur-md bg-white/30 rounded-b-2xl"
     >
       <div className="b_profile_container">
@@ -148,40 +149,42 @@ const Navbar = () => {
           </motion.div>
 
           <div className="hidden lg:flex items-center space-x-4">
-            {menu.map((item, index) => item.items ? (
-              <Dropdown
-                key={index}
-                className="bg-white w-[200px] rounded-lg"
-                inline
-                label={
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center cursor-pointer hover:text-blue-600 transition-colors duration-300"
-                  >
-                    <h2 className="font-semibold">{item.label}</h2>
-                  </motion.div>
-                }
-              >
-                {item.items.map((subItem, subIndex) => (
-                  <Dropdown.Item key={subIndex}>
-                    <Link
-                      className="w-11/12 mx-auto my-1 rounded-md text-start hover:bg-gray-100 transition-colors duration-300"
-                      to={subItem.path}
+            {menu.map((item, index) =>
+              item.items ? (
+                <Dropdown
+                  key={index}
+                  className="bg-white w-[200px] rounded-lg"
+                  inline
+                  label={
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center cursor-pointer hover:text-blue-600 transition-colors duration-300"
                     >
-                      {subItem.label}
-                    </Link>
-                  </Dropdown.Item>
-                ))}
-              </Dropdown>
-            ) : (
-              <NavLink
-                key={index}
-                className="font-semibold hover:text-blue-600 transition-colors duration-300"
-                to={item.path}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+                      <h2 className="font-semibold">{item.label}</h2>
+                    </motion.div>
+                  }
+                >
+                  {item.items.map((subItem, subIndex) => (
+                    <Dropdown.Item key={subIndex}>
+                      <Link
+                        className="w-11/12 mx-auto my-1 rounded-md text-start hover:bg-gray-100 transition-colors duration-300"
+                        to={subItem.path}
+                      >
+                        {subItem.label}
+                      </Link>
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown>
+              ) : (
+                <NavLink
+                  key={index}
+                  className="font-semibold hover:text-blue-600 transition-colors duration-300"
+                  to={item.path}
+                >
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </div>
 
           <div className="flex items-center">
@@ -211,7 +214,7 @@ const Navbar = () => {
         </div>
       </div>
     </motion.nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
