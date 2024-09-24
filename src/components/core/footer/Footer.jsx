@@ -1,12 +1,14 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
+
+import LogoImage from '@/assets/logo/logo.png'
 
 const Footer = () => {
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className="bg-gray-900 text-white py-8"
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className="bg-gray-300 text-white py-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -15,33 +17,36 @@ const Footer = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex justify-between items-center border-b border-gray-700 pb-6"
         >
+          <div className="text-lg font-semibold">
+            <img src={LogoImage} className="h-32" alt="Business Profile logo" />
+          </div>
           <div className="text-lg font-semibold">BSMI</div>
           <div className="space-x-6">
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               Home
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               About
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               Services
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               Contact
             </motion.a>
@@ -60,28 +65,28 @@ const Footer = () => {
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               <i className="fab fa-facebook-f"></i>
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               <i className="fab fa-twitter"></i>
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               <i className="fab fa-instagram"></i>
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-white transition duration-300"
+              className=" transition duration-300"
             >
               <i className="fab fa-linkedin-in"></i>
             </motion.a>
@@ -89,7 +94,7 @@ const Footer = () => {
         </motion.div>
       </div>
     </motion.footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
