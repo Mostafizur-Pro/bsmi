@@ -1,6 +1,7 @@
 import MainLayout from '@/components/layouts/MainLayout'
 import LoginPage from '@/components/pages/auth/user/login/Login'
 import AboutUsPage from '@/components/pages/publicPage/about/International'
+import PresidentPage from '@/components/pages/publicPage/about/President'
 import TraditionalPage from '@/components/pages/publicPage/about/Traditional'
 import ContactPage from '@/components/pages/publicPage/contact/ContactPage'
 import DocumentationPage from '@/components/pages/publicPage/documents/DocumentationPage'
@@ -28,6 +29,10 @@ const PublicRoutes = [
       {
         path: '/traditional',
         element: <TraditionalPage />,
+      },
+      {
+        path: '/president',
+        element: <PresidentPage />,
       },
       {
         path: '/events',
