@@ -3,14 +3,7 @@ import LogoImage from '@/assets/logo/logo.png'
 
 const HeroAbout = () => {
   return (
-    <section className="relative py-16 text-white">
-      {/* <div className="absolute inset-0">
-        <img
-          src="https://media.istockphoto.com/id/936261220/photo/karate-students-training-together.jpg?s=1024x1024&w=is&k=20&c=H7XtVohsYZG51UNrKP8_tP1W2L_4dfGgfzGvH4bYlFc="
-          alt="Martial Arts Training"
-          className="object-cover w-full h-full opacity-40"
-        />
-      </div> */}
+    <section className="relative py-16 ">
       <div className="relative container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <motion.div
@@ -22,7 +15,7 @@ const HeroAbout = () => {
             <motion.img
               src={LogoImage}
               alt="Martial Arts"
-              className="rounded-lg shadow-lg"
+
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
