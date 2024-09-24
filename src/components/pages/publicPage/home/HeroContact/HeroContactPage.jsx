@@ -113,9 +113,8 @@ const HeroContactPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${errors.name ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 placeholder="Enter your name"
                 aria-invalid={errors.name ? 'true' : 'false'}
                 aria-describedby={errors.name ? 'name-error' : null}
@@ -140,9 +139,8 @@ const HeroContactPage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${
-                  errors.email ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 placeholder="Enter your email"
                 aria-invalid={errors.email ? 'true' : 'false'}
                 aria-describedby={errors.email ? 'email-error' : null}
@@ -170,9 +168,8 @@ const HeroContactPage = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${
-                  errors.subject ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 placeholder="Enter the subject"
                 aria-invalid={errors.subject ? 'true' : 'false'}
                 aria-describedby={errors.subject ? 'subject-error' : null}
@@ -197,9 +194,8 @@ const HeroContactPage = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${
-                  errors.phone ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 placeholder="Enter your phone number"
                 aria-invalid={errors.phone ? 'true' : 'false'}
                 aria-describedby={errors.phone ? 'phone-error' : null}
@@ -225,9 +221,8 @@ const HeroContactPage = () => {
               value={formData.message}
               onChange={handleChange}
               rows="6"
-              className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${
-                errors.message ? 'border-red-500' : 'border-gray-300'
-              }`}
+              className={`p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                }`}
               placeholder="Enter your message"
               aria-invalid={errors.message ? 'true' : 'false'}
               aria-describedby={errors.message ? 'message-error' : null}

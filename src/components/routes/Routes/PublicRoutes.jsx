@@ -1,6 +1,7 @@
 import MainLayout from '@/components/layouts/MainLayout'
 import LoginPage from '@/components/pages/auth/user/login/Login'
 import AboutUsPage from '@/components/pages/publicPage/about/International'
+import TraditionalPage from '@/components/pages/publicPage/about/Traditional'
 import ContactPage from '@/components/pages/publicPage/contact/ContactPage'
 import DocumentationPage from '@/components/pages/publicPage/documents/DocumentationPage'
 import EventsPage from '@/components/pages/publicPage/eventResult/EventsPage'
@@ -23,6 +24,10 @@ const PublicRoutes = [
       {
         path: '/about-us',
         element: <AboutUsPage />,
+      },
+      {
+        path: '/traditional',
+        element: <TraditionalPage />,
       },
       {
         path: '/events',

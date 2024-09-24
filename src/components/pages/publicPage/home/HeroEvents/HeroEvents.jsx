@@ -39,7 +39,7 @@ const HeroEvents = () => {
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
     >
-      <h2 className="text-3xl font-bold text-center text-red-600 mb-8">Events</h2>
+      <h2 className="text-4xl font-bold text-red-600 text-center">Events</h2>
       <p className="text-center text-gray-600 mb-12">
         CHECK BELOW THE ITKF EVENTS
       </p>

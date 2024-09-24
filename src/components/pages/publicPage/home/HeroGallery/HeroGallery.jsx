@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import ContactPage from "../contact/ContactPage";
+
 
 const HeroGallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -25,9 +25,9 @@ const HeroGallery = () => {
     return (
         <section className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto text-center mb-10">
-                <h1 className="text-4xl font-semibold text-red-600">
+                <h2 className="text-4xl font-bold text-red-600">
                     Our Beautiful Gallery
-                </h1>
+                </h2>
                 <p className="mt-4 ">
                     A collection of peaceful and stunning visuals, curated just for you.
                 </p>
