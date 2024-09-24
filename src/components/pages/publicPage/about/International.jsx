@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion'
+// import presidenct from '@/assets/about/presidenct.jpg'
+import president from '@/assets/about/president.jpg'
+import ContactPage from '../contact/ContactPage'
 
 const AboutUsPage = () => {
   return (
@@ -98,12 +101,12 @@ const AboutUsPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <img
-                src="https://via.placeholder.com/150"
+                src={president}
                 alt="Team Member 1"
                 className="w-24 h-24 mx-auto rounded-full object-cover"
               />
-              <h3 className="text-xl font-semibold mt-4">Jane Doe</h3>
-              <p className="text-gray-500">CEO & Founder</p>
+              <h3 className="text-xl font-semibold mt-4">kyoshi HMNC Rana</h3>
+              <p className="text-gray-500">President</p>
               <p className="mt-2">
                 Jane is the visionary behind our company, leading with passion
                 and expertise.
@@ -123,7 +126,7 @@ const AboutUsPage = () => {
                 className="w-24 h-24 mx-auto rounded-full object-cover"
               />
               <h3 className="text-xl font-semibold mt-4">John Smith</h3>
-              <p className="text-gray-500">Lead Developer</p>
+              <p className="text-gray-500">Vise Presidenct</p>
               <p className="mt-2">
                 John is the mastermind behind our technological solutions,
                 ensuring quality and innovation.
@@ -143,7 +146,7 @@ const AboutUsPage = () => {
                 className="w-24 h-24 mx-auto rounded-full object-cover"
               />
               <h3 className="text-xl font-semibold mt-4">Alice Johnson</h3>
-              <p className="text-gray-500">Marketing Specialist</p>
+              <p className="text-gray-500">Vise Presidenct</p>
               <p className="mt-2">
                 Alice drives our marketing efforts, crafting strategies that
                 resonate with our audience.
@@ -152,6 +155,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </div>
+      <ContactPage />
     </section>
   )
 }
