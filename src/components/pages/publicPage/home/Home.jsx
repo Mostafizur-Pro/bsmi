@@ -1,8 +1,7 @@
-import GalleryPage from "../Media/GalleryPage";
 import HeroAbout from "./HeroAbout/HeroAbout";
-import HeroContact from "./HeroContact/HeroContact";
 import HeroContactPage from "./HeroContact/HeroContactPage";
 import HeroEvents from "./HeroEvents/HeroEvents";
+import HeroGallery from "./HeroGallery/HeroGallery";
 import HeroSection from "./HeroSection/HeroSection";
 
 const Home = () => {
@@ -12,8 +11,7 @@ const Home = () => {
       {/* <HeroContact /> */}
       <HeroAbout />
       <HeroEvents />
-      <GalleryPage />
-
+      <HeroGallery />
       <HeroContactPage />
 
     </div>
